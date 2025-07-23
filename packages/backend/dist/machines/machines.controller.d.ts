@@ -12,6 +12,7 @@ export declare class MachinesController {
     clearMetrics(id: string): Promise<void>;
     getMachineIds(): Promise<string[]>;
     getAllMachineStatuses(): Promise<MachineStatusDto[]>;
+    getAllMachines(): Promise<any[]>;
     getAllAlerts(): Promise<AlertDto[]>;
     getMetricHistory(): Promise<MetricHistoryDto[]>;
     getAlertsByLevel(level: 'INFO' | 'WARNING' | 'CRITICAL'): Promise<AlertDto[]>;

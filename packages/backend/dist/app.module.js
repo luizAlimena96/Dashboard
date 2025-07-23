@@ -10,11 +10,13 @@ exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
 const machines_module_1 = require("./machines/machines.module");
+const health_controller_1 = require("./health/health.controller");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
+        controllers: [health_controller_1.HealthController],
         imports: [
             typeorm_1.TypeOrmModule.forRoot({
                 type: 'sqlite',

@@ -14,6 +14,7 @@ import { MachinesService } from './machines.service';
 import { AlertDto } from './dto/alert.dto';
 import { MachineStatusDto } from './dto/machine-status.dto';
 import { MetricHistoryDto } from './dto/metric-history.dto';
+import { MachineResponseDto } from './dto/machine-response.dto';
 
 @Controller('machines')
 export class MachinesController {
@@ -65,6 +66,17 @@ export class MachinesController {
   @Get('status')
   async getAllMachineStatuses(): Promise<MachineStatusDto[]> {
     return await this.machinesService.getAllMachineStatuses();
+  }
+
+  @Get()
+  async getAllMachines(): Promise<any[]> {
+    const responses = await this.machinesService.getAllMachineResponses();
+    
+    return responses.map(machine => ({
+      id: machine.machineId,
+      name: machine.name,
+      status: machine.status.toLowerCase()
+    }));
   }
 
   @Get('alerts')

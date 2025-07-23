@@ -1,8 +1,9 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { MachinesModule } from './machines/machines.module';
-
+import { HealthController } from './health/health.controller';
 @Module({
+  controllers: [HealthController],
   imports: [
     TypeOrmModule.forRoot({
       type: 'sqlite',

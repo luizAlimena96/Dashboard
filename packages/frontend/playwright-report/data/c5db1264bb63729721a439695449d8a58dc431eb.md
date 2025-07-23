@@ -1,0 +1,57 @@
+# Page snapshot
+
+```yaml
+- banner:
+  - img "Logo do Dashboard Industrial"
+  - heading "Dashboard de Monitoramento" [level=1]
+  - button "Alternar para modo escuro":
+    - img
+  - img
+  - text: Online
+  - button "Configuração"
+- main:
+  - heading "Métricas em Tempo Real" [level=2]
+  - paragraph: Monitoramento contínuo dos equipamentos industriais
+  - paragraph: Última atualização
+  - paragraph: 11:13:09
+  - heading "Estado da Máquina" [level=3]
+  - img
+  - text: Desligada
+  - paragraph: "Status: Operacional"
+  - heading "Temperatura" [level=3]
+  - img
+  - text: 79.3°C
+  - img
+  - paragraph: "Máximo seguro: 85°C"
+  - heading "Rotação (RPM)" [level=3]
+  - img
+  - text: "1266"
+  - img
+  - paragraph: "Máximo seguro: 1500 RPM"
+  - heading "Tempo de Operação" [level=3]
+  - img
+  - text: 35h 0m
+  - paragraph: 1 dias de operação
+  - heading "Histórico de Temperatura e RPM" [level=3]
+  - list:
+    - listitem:
+      - img "Eficiência legend icon"
+      - text: Eficiência
+    - listitem:
+      - img "RPM legend icon"
+      - text: RPM
+    - listitem:
+      - img "Temperatura legend icon"
+      - text: Temperatura
+  - application: 11:10:49 11:10:53 11:10:57 11:11:01 11:11:05 11:10:21 11:10:25 11:10:29 11:10:33 11:10:37 11:10:41 11:10:45 0 25 50 75 100 °C 763 963 1163 1363 1522 RPM
+  - heading "Alertas Recentes (2 ativos)" [level=3]
+  - img
+  - paragraph: "AVISO: RPM Baixo"
+  - paragraph: 11:13:09 •
+  - img
+  - paragraph: "INFO: Manutenção Próxima"
+  - paragraph: 11:13:07 •
+  - heading "Métricas de Eficiência" [level=3]
+  - text: "OEE: 95.1% Disponibilidade: 93.2% Performance: 83.7% Qualidade: 91.9%"
+- alert
+```

@@ -45,6 +45,14 @@ let MachinesController = class MachinesController {
     async getAllMachineStatuses() {
         return await this.machinesService.getAllMachineStatuses();
     }
+    async getAllMachines() {
+        const responses = await this.machinesService.getAllMachineResponses();
+        return responses.map(machine => ({
+            id: machine.machineId,
+            name: machine.name,
+            status: machine.status.toLowerCase()
+        }));
+    }
     async getAllAlerts() {
         return await this.machinesService.getAllAlerts();
     }
@@ -111,6 +119,12 @@ __decorate([
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], MachinesController.prototype, "getAllMachineStatuses", null);
+__decorate([
+    (0, common_1.Get)(),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], MachinesController.prototype, "getAllMachines", null);
 __decorate([
     (0, common_1.Get)('alerts'),
     __metadata("design:type", Function),

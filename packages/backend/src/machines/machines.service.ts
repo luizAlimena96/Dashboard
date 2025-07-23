@@ -8,6 +8,7 @@ import { MetricHistory } from './entities/metric-history.entity';
 import { AlertDto } from './dto/alert.dto';
 import { MachineStatusDto } from './dto/machine-status.dto';
 import { MetricHistoryDto } from './dto/metric-history.dto';
+import { MachineResponseDto } from './dto/machine-response.dto';
 
 @Injectable()
 export class MachinesService {
@@ -34,6 +35,25 @@ export class MachinesService {
     if (!status) return null;
 
     return this.transformToMachineStatusDto(status);
+  }
+
+  async getAllMachineResponses(): Promise<MachineResponseDto[]> {
+    return [
+      {
+        machineId: 'machine-1',
+        name: 'Extruder Alpha',
+        status: 'RUNNING',
+        lastMaintenance: new Date('2023-01-15'),
+        nextMaintenance: new Date('2023-07-20')
+      },
+      {
+        machineId: 'machine-2',
+        name: 'Press Beta',
+        status: 'STOPPED',
+        lastMaintenance: new Date('2023-03-10'),
+        nextMaintenance: new Date('2023-09-15')
+      }
+    ];
   }
 
   async getAllAlerts(): Promise<AlertDto[]> {

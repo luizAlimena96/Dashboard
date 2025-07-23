@@ -40,6 +40,24 @@ let MachinesService = class MachinesService {
             return null;
         return this.transformToMachineStatusDto(status);
     }
+    async getAllMachineResponses() {
+        return [
+            {
+                machineId: 'machine-1',
+                name: 'Extruder Alpha',
+                status: 'RUNNING',
+                lastMaintenance: new Date('2023-01-15'),
+                nextMaintenance: new Date('2023-07-20')
+            },
+            {
+                machineId: 'machine-2',
+                name: 'Press Beta',
+                status: 'STOPPED',
+                lastMaintenance: new Date('2023-03-10'),
+                nextMaintenance: new Date('2023-09-15')
+            }
+        ];
+    }
     async getAllAlerts() {
         const alerts = await this.alertRepository.find({
             order: { timestamp: 'DESC' },
