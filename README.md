@@ -68,7 +68,7 @@ Na raiz do projeto, você pode usar os seguintes scripts:
 ![alt text](image-1.png)
 
 
-Nessa primeira parte foi implementado os cards de estado da máquina, que mostram a temperatura, RPM e eficiência. Assim como o heade, que contém o nome "Dashboard de Monitoramento", botão de tema claro/escuro e um indicador de online/offline, que pode-se visualizar o seu funcionamento no vídeo.
+Nessa primeira parte foi implementado os cards de estado da máquina, que mostram a temperatura, RPM e eficiência. Assim como o heade, que contém o nome "Dashboard de Monitoramento", botão de tema claro/escuro e um indicador de online/offline, que pode-se visualizar o seu funcionamento no vídeo, encontrado no final do documento.
 
 ![alt text](image-2.png)
 
@@ -98,3 +98,6 @@ Pode se testar a API no seguinte endpoint: [http://localhost:4000/api/status](ht
 - Histórico de operação
 - Alertas e notificações
 - Tema claro/escuro
+
+## Vídeo
+
