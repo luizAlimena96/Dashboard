@@ -1,6 +1,5 @@
 import { FullConfig } from '@playwright/test';
 
-// Esta função verifica se o backend está acessível
 export default async function globalSetup() {
   console.log('🔍 Verificando se o backend está acessível em http://localhost:4000...');
   
@@ -12,12 +11,11 @@ export default async function globalSetup() {
   
   let backendIsUp = false;
   
-  // Tenta cada endpoint para ver se o backend está respondendo
   for (const endpoint of endpoints) {
     try {
       console.log(`Tentando conectar em: ${endpoint}`);
       const response = await fetch(endpoint, { 
-        signal: AbortSignal.timeout(2000) // Timeout de 2 segundos
+        signal: AbortSignal.timeout(2000)
       });
       
       if (response.ok) {
@@ -41,7 +39,5 @@ export default async function globalSetup() {
   }
   
   console.log('✅ Tudo pronto para executar os testes E2E!');
-  
-  // Retorna uma função vazia para o teardown (não precisamos limpar nada)
   return async () => {};
 }
