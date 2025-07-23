@@ -1,0 +1,12 @@
+{
+  "name": "stw-monorepo",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "start": "npm run start --workspace=backend & npm run start --workspace=frontend",
+    "dev": "start npm run start:dev --workspace=backend && npm run dev --workspace=frontend",
+    "build": "npm run build --workspace=backend && npm run build --workspace=frontend"
+  }
+}
