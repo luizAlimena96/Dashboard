@@ -64,6 +64,21 @@ Na raiz do projeto, você pode usar os seguintes scripts:
    ```
    O frontend estará disponível em: `http://localhost:3000`
 
+## 📊 Funcionalidades
+![alt text](image-1.png)
+
+
+Nessa primeira parte foi implementado os cards de estado da máquina, que mostram a temperatura, RPM e eficiência. Assim como o heade, que contém o nome "Dashboard de Monitoramento", botão de tema claro/escuro e um indicador de online/offline, que pode-se visualizar o seu funcionamento no vídeo.
+
+![alt text](image-2.png)
+
+Na segunda parte foi implementado o gráfico de performance, que mostra a eficiência da máquina em tempo real, onde consegue-se ver as curvas de temperatura, RPM e para mostrar a eficiência utilizou-se pontos, que estão vinculados ao eixo y da esquerda.
+
+![alt text](image.png)
+
+Na última parte foi implementado os alertas, que mostra os alertas da máquina em tempo real, sendo que por prioridade os alertas são organizados em CRITICAL, WARNING e INFO, sendo que o alerta CRITICAL é o mais grave e o INFO é o menos grave, tendo efeitos sonoros para os alertas CRITICAL e WARNING. Na parte de Métricas de eficiência utilizou-se o mesmo princípio dos dados dos cards (vistos na primeira parte), assim são atualizados em tempo real.
+
+Levando em conta que esse é um ambiente que os dados foram gerados através de uma seed, os dados tem um limite, e nessa caso os dados se encontram em loop.
 
 ## 🌐 Acessando o Dashboard
 
