@@ -1,7 +1,7 @@
 import { format } from "date-fns";
 
 interface MetricsHeaderProps {
-  lastUpdate: string;
+  lastUpdate: Date;
 }
 
 export const MetricsHeader = ({ lastUpdate }: MetricsHeaderProps) => {
@@ -19,7 +19,7 @@ export const MetricsHeader = ({ lastUpdate }: MetricsHeaderProps) => {
         <p className="text-sm text-gray-500 dark:text-gray-400">
           Última atualização
         </p>
-        <p className="text-sm font-medium">
+        <p className="text-sm font-medium text-gray-500 dark:text-gray-400">
           {format(new Date(lastUpdate), "HH:mm:ss")}
         </p>
       </div>

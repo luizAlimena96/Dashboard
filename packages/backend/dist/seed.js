@@ -26,8 +26,8 @@ async function seed() {
     ];
     const alertLevels = [
         'INFO',
-        'AVISO',
-        'CRÍTICO',
+        'WARNING',
+        'CRITICAL',
     ];
     const alerts = ['Temp. Alta', 'RPM Baixo', 'Manutenção Próxima'];
     const now = new Date();
@@ -60,10 +60,10 @@ async function seed() {
         let level = alertLevels[i % alertLevels.length];
         const alertType = alerts[i % alerts.length];
         if (alertType === 'Temp. Alta') {
-            level = 'CRÍTICO';
+            level = 'CRITICAL';
         }
         else if (alertType === 'RPM Baixo') {
-            level = 'AVISO';
+            level = 'WARNING';
         }
         else if (alertType === 'Manutenção Próxima') {
             level = 'INFO';

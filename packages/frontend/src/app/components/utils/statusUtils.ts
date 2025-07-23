@@ -11,7 +11,7 @@ import {
 
 export type MachineState = "RUNNING" | "STOPPED" | "MAINTENANCE" | "ERROR";
 export type StatusColor = "success" | "info" | "warning" | "danger" | "primary";
-export type AlertLevel = "INFO" | "AVISO" | "CRÍTICO";
+export type AlertLevel = "INFO" | "WARNING" | "CRITICAL";
 
 export const getStatusText = (state: MachineState): string => {
   switch (state) {
@@ -84,12 +84,12 @@ export const getAlertIcon = (level: AlertLevel): React.ReactElement => {
         className: "text-blue-500",
         size: iconSize,
       });
-    case "AVISO":
+    case "WARNING":
       return React.createElement(FiAlertTriangle, {
         className: "text-yellow-500",
         size: iconSize,
       });
-    case "CRÍTICO":
+    case "CRITICAL":
       return React.createElement(FiAlertTriangle, {
         className: "text-red-500",
         size: iconSize,

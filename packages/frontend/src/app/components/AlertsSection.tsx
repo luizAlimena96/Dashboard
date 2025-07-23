@@ -10,13 +10,13 @@ interface AlertsSectionProps {
 }
 
 const alertSounds = {
-  CRÍTICO: "/critical-alert.mp3",
-  AVISO: "/warning-alert.mp3",
+  CRITICAL: "/critical-alert.mp3",
+  WARNING: "/warning-alert.mp3",
   INFO: null,
 };
 
 const sortAlertsBySeverity = (alerts: Alert[]): Alert[] => {
-  const severityOrder = { CRÍTICO: 1, AVISO: 2, INFO: 3 };
+  const severityOrder = { CRITICAL: 1, WARNING: 2, INFO: 3 };
   return [...alerts].sort(
     (a, b) => severityOrder[a.level] - severityOrder[b.level]
   );
@@ -33,13 +33,13 @@ export const AlertsSection = ({
   useEffect(() => {
     const newCriticalOrWarningAlerts = sortedAlerts.filter(
       (alert) =>
-        (alert.level === "CRÍTICO" || alert.level === "AVISO") &&
+        (alert.level === "CRITICAL" || alert.level === "WARNING") &&
         !lastPlayedAlerts.current.has(alert.id)
     );
 
     if (newCriticalOrWarningAlerts.length > 0) {
       const highestSeverityAlert = newCriticalOrWarningAlerts.reduce(
-        (prev, current) => (prev.level === "CRÍTICO" ? prev : current)
+        (prev, current) => (prev.level === "CRITICAL" ? prev : current)
       );
 
       if (audioRef.current) {
@@ -52,7 +52,7 @@ export const AlertsSection = ({
         audioRef.current = audio;
         audio.play().catch(console.error);
 
-        if (highestSeverityAlert.level === "CRÍTICO") {
+        if (highestSeverityAlert.level === "CRITICAL") {
           const timer = setTimeout(() => {}, 3000);
 
           return () => clearTimeout(timer);
@@ -85,9 +85,9 @@ export const AlertsSection = ({
             <div
               key={`${alertMachineId}-${alert.id}`}
               className={`flex items-start gap-3 p-3 rounded-lg transition-all ${
-                alert.level === "CRÍTICO"
+                alert.level === "CRITICAL"
                   ? "bg-red-50 dark:bg-red-900/30"
-                  : alert.level === "AVISO"
+                  : alert.level === "WARNING"
                   ? "bg-yellow-50 dark:bg-yellow-900/30"
                   : "bg-blue-50 dark:bg-blue-900/30"
               }`}

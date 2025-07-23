@@ -6,7 +6,7 @@ export class Alert {
   id: string;
 
   @Column()
-  level: 'INFO' | 'AVISO' | 'CRÍTICO';
+  level: 'INFO' | 'WARNING' | 'CRITICAL';
 
   @Column()
   message: string;

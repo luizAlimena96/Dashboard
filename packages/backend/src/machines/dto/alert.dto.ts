@@ -1,6 +1,6 @@
 export interface AlertDto {
   id: string;
-  level: 'INFO' | 'AVISO' | 'CRÍTICO';
+  level: 'INFO' | 'WARNING' | 'CRITICAL';
   message: string;
   timestamp: Date;
 }

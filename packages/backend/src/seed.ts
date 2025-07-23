@@ -26,10 +26,10 @@ async function seed() {
     'MAINTENANCE',
     'ERROR',
   ];
-  const alertLevels: Array<'INFO' | 'AVISO' | 'CRÍTICO'> = [
+  const alertLevels: Array<'INFO' | 'WARNING' | 'CRITICAL'> = [
     'INFO',
-    'AVISO',
-    'CRÍTICO',
+    'WARNING',
+    'CRITICAL',
   ];
 
   const alerts = ['Temp. Alta', 'RPM Baixo', 'Manutenção Próxima'];
@@ -63,14 +63,14 @@ async function seed() {
       efficiency,
     });
 
-    let level: 'INFO' | 'AVISO' | 'CRÍTICO' =
+    let level: 'INFO' | 'WARNING' | 'CRITICAL' =
       alertLevels[i % alertLevels.length];
     const alertType = alerts[i % alerts.length];
 
     if (alertType === 'Temp. Alta') {
-      level = 'CRÍTICO';
+      level = 'CRITICAL';
     } else if (alertType === 'RPM Baixo') {
-      level = 'AVISO';
+      level = 'WARNING';
     } else if (alertType === 'Manutenção Próxima') {
       level = 'INFO';
     }

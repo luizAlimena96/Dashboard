@@ -1,3 +1,4 @@
+// Tentei ao máximo componentizar o dashboard, tentando deixar o código mais limpo e organizado possível.
 "use client";
 import { useMachineData } from "@/lib/hooks/useMachineData";
 import { useMetricHistory } from "@/lib/hooks/useMetricsHistory";

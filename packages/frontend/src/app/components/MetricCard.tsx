@@ -1,3 +1,4 @@
+//Aqui a ideia era deixar o card genérico.
 "use client";
 
 import { FiTrendingUp, FiTrendingDown, FiMinus } from "react-icons/fi";

@@ -1,3 +1,4 @@
+// Aqui a ideia era deixar o gráfico genérico. Poderia ter implementado o title genérico tambem.
 "use client";
 import {
   LineChart,
@@ -21,7 +22,42 @@ interface MetricChartProps {
     efficiency: number;
   }>;
 }
+const CustomTooltip = ({ active, payload, label }: any) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className="bg-white dark:bg-gray-800 p-4 border border-gray-200 dark:border-gray-700 rounded shadow-sm">
+        <p className="text-gray-900 dark:text-gray-100 font-medium mb-2">
+          Hora: {label}
+        </p>
+        {payload.map((entry: any, index: number) => {
+          const numericValue = Number(entry.value);
+          let value = isNaN(numericValue) ? entry.value : numericValue.toFixed(0);
+          let name = entry.name;
+          if (name === "formattedTime") return null;
+          if (name === "Temperatura") {
+            name = "Temperatura (°C)";
+          } else if (name === "RPM") {
+            name = "RPM";
+          } else if (name === "Eficiência") {
+            name = "Eficiência (%)";
+          }
 
+          return (
+            <p 
+              key={`tooltip-${index}`} 
+              className="text-sm text-gray-600 dark:text-gray-400"
+              style={{ color: entry.color }}
+            >
+              {name}: {value}
+            </p>
+          );
+        })}
+      </div>
+    );
+  }
+
+  return null;
+};
 export function MetricChart({ data }: MetricChartProps) {
   return (
     <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border p-6 border-gray-200 dark:border-gray-700 transition-colors duration-200">
@@ -36,7 +72,7 @@ export function MetricChart({ data }: MetricChartProps) {
           <CartesianGrid strokeDasharray="3 3" stroke="#ccc" />
           <XAxis
             dataKey="formattedTime"
-            stroke="#8884d8"
+            stroke="#060424"
             tick={{ fontSize: 12 }}
           />
           <YAxis
@@ -52,19 +88,7 @@ export function MetricChart({ data }: MetricChartProps) {
             domain={["dataMin - 50", "dataMax + 50"]}
             label={{ value: "RPM", angle: 90, position: "insideRight" }}
           />
-          <Tooltip
-            formatter={(value, name) => {
-              if (name === "formattedTime") return null;
-              if (name === "Temperatura")
-                return [Number(value).toFixed(0), "Temperatura (°C)"];
-              if (name === "RPM") return [Number(value).toFixed(0), "RPM"];
-              if (name === "Eficiência")
-                return [Number(value).toFixed(0), "Eficiência (%)"];
-
-              return [Number(value).toFixed(0), name];
-            }}
-            labelFormatter={(label) => `Hora: ${label}`}
-          />
+<Tooltip content={<CustomTooltip />} />
           <Legend />
 
           <Line

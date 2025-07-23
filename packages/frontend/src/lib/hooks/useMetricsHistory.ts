@@ -1,3 +1,7 @@
+// Aqui eu tentei simular a entrada de dados reais de uma máquina acredito que 24 valores ficou bom, 
+// com mais valores o index do eixo x ficou muito amontoado, seguindo a mesma ideia do useMachineData,
+// acredito que seria mais fácil se eu tivesse criado o backend para ir gerando valores.
+
 "use client";
 import useSWR from "swr";
 import { fetchMachineMetrics } from "@/lib/api";

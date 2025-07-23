@@ -1,3 +1,6 @@
+// Aqui eu tentei simular a entrada de dados reais de uma máquina, 
+// acredito que seria mais fácil se eu tivesse criado o backend para ir gerando valores.
+
 "use client";
 import useSWR from "swr";
 import { fetchMachineStatus, fetchMachineAlerts } from "@/lib/api";

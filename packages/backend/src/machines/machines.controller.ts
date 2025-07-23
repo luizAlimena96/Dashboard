@@ -1,4 +1,3 @@
-// machines/machines.controller.ts
 import {
   Controller,
   Get,
