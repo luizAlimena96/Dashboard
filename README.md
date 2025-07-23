@@ -101,3 +101,7 @@ Pode se testar a API no seguinte endpoint: [http://localhost:4000/api/status](ht
 
 ## Vídeo
 
+
+https://github.com/user-attachments/assets/466241b0-6460-434d-9190-211e7227a122
+
+
