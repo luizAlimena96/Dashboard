@@ -99,9 +99,21 @@ Pode se testar a API no seguinte endpoint: [http://localhost:4000/api/status](ht
 - Alertas e notificações
 - Tema claro/escuro
 
-## Vídeo
+## Testes E2E
 
+- Fiz alguns testes básicos, que podem ser vistos no vídeo 2, utilizou-se o playwright para fazer os testes.
 
+## Vídeos
+
+1. Demonstração do funcionamento da aplicação.
+
+ 
 https://github.com/user-attachments/assets/466241b0-6460-434d-9190-211e7227a122
+
+
+2. Demonstração dos testes E2E.
+
+
+https://github.com/user-attachments/assets/d8ae24fc-58e5-44bf-a314-8e0824d75ee2
 
 
