@@ -64,7 +64,6 @@ export const useMetricHistory = (
   const updateWindowData = useCallback(() => {
     if (dataCache.current.length === 0) return;
 
-    // Cria a janela de dados baseada no offset atual
     const endIndex = Math.min(
       currentOffset.current + limit,
       dataCache.current.length
@@ -74,7 +73,6 @@ export const useMetricHistory = (
       endIndex
     );
 
-    // Se precisar, volta ao início do array
     if (newWindowData.length < limit) {
       newWindowData.push(
         ...dataCache.current.slice(0, limit - newWindowData.length)
@@ -84,7 +82,6 @@ export const useMetricHistory = (
     setWindowData(newWindowData);
   }, [limit]);
 
-  // Avança o offset automaticamente
   useEffect(() => {
     const interval = setInterval(() => {
       if (dataCache.current.length === 0) return;
